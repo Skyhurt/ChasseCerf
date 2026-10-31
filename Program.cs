@@ -17,5 +17,20 @@ class Program
           sans consommer de flèche.
         - Afficher le bilan final de la chasse.
         */
+        int Arrow;
+        Console.WriteLine("===LA CHASSE COMMENCE !===");
+        Console.WriteLine("Flèches restantes: ");
+        Console.WriteLine("Résultat du tir (touche/rate): ");
+        
+        Console.WriteLine("Bien joué ! Le cerf est touché.");
+        Console.WriteLine("Raté ! Le cerf s'est échappé de justesse.");
+
+        Console.WriteLine("Le cerf est abattu !");
+
+        Console.WriteLine("===BILAN DE LA CHASSE===");
+        Console.WriteLine("Tir réussis: ");
+        Console.WriteLine("Flèches restantes: ");
+        Console.WriteLine("Résultat: chasse réussie !");
+        Console.WriteLine("Résultat: chasse échouée !");
     }
 }
