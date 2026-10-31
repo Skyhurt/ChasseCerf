@@ -21,8 +21,8 @@ class Program
         */
         int arrow = 5;
         int goodShoot = 0;
-        string hit = "touche";
         int hpCerf = 3;
+        string hit = "touche";
         Console.WriteLine("===LA CHASSE COMMENCE !===");
 
         do
