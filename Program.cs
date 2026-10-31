@@ -1,4 +1,6 @@
-﻿namespace Chasse_cerf;
+﻿using System;
+
+namespace Chasse_cerf;
 
 class Program
 {
@@ -17,20 +19,48 @@ class Program
           sans consommer de flèche.
         - Afficher le bilan final de la chasse.
         */
-        int Arrow;
+        int arrow = 5;
+        int goodShoot = 0;
+        string hit = "touche";
+        int hpCerf = 3;
         Console.WriteLine("===LA CHASSE COMMENCE !===");
-        Console.WriteLine("Flèches restantes: ");
-        Console.WriteLine("Résultat du tir (touche/rate): ");
-        
-        Console.WriteLine("Bien joué ! Le cerf est touché.");
-        Console.WriteLine("Raté ! Le cerf s'est échappé de justesse.");
 
-        Console.WriteLine("Le cerf est abattu !");
+        do
+        {
+            Console.WriteLine("Flèches restantes: " + arrow);
+            Console.WriteLine("Vise bien ta cible ! (touche/rate)");
+            hit = Console.ReadLine();
+            Console.WriteLine("Résultat du tir (touche/rate): " + hit);
+            if (hit != "touche")
+            {
+                Console.WriteLine("Raté ! Le cerf s'est échappé de justesse.");
+                arrow = arrow - 1;
+            }
+                else
+                {
+                    Console.WriteLine("Bien joué ! Le cerf est touché.");
+                    arrow = arrow - 1;
+                    hpCerf = hpCerf - 1;
+                    goodShoot = goodShoot + 1;
+                }
+            if (arrow == 0)
+            {
+                break;
+            }
+        Console.WriteLine("Il reste " + hpCerf + " point de vie au cerf");
+        } while (hpCerf != 0);
 
         Console.WriteLine("===BILAN DE LA CHASSE===");
-        Console.WriteLine("Tir réussis: ");
-        Console.WriteLine("Flèches restantes: ");
-        Console.WriteLine("Résultat: chasse réussie !");
-        Console.WriteLine("Résultat: chasse échouée !");
-    }
+        Console.WriteLine("Tir réussis: " + goodShoot);
+        Console.WriteLine("Flèches restantes: " + arrow);
+
+        if (hpCerf == 0)
+        {
+            Console.WriteLine("Le cerf est abattu !");
+            Console.WriteLine("Résultat: chasse réussie !");
+        } else
+            {
+                Console.WriteLine("Résultat: chasse échouée !");
+            }
+        }
 }
