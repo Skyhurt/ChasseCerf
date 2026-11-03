@@ -31,18 +31,23 @@ class Program
             Console.WriteLine("Vise bien ta cible ! (touche/rate)");
             hit = Console.ReadLine();
             Console.WriteLine("Résultat du tir (touche/rate): " + hit);
-            if (hit != "touche")
+            if (hit != "touche" && hit != "rate")
             {
-                Console.WriteLine("Raté ! Le cerf s'est échappé de justesse.");
-                arrow = arrow - 1;
-            }
-                else
+                Console.WriteLine("Commande invalide.");
+                continue;
+            } 
+                else if (hit == "rate")
                 {
-                    Console.WriteLine("Bien joué ! Le cerf est touché.");
+                    Console.WriteLine("Raté ! Le cerf s'est échappé de justesse.");
                     arrow = arrow - 1;
-                    hpCerf = hpCerf - 1;
-                    goodShoot = goodShoot + 1;
                 }
+                    else
+                    {
+                        Console.WriteLine("Bien joué ! Le cerf est touché.");
+                        arrow = arrow - 1;
+                        hpCerf = hpCerf - 1;
+                        goodShoot = goodShoot + 1;
+                    }
             if (arrow == 0)
             {
                 break;
